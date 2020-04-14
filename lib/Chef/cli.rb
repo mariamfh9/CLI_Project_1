@@ -32,6 +32,7 @@ class Cli
     end 
 
     def print_recipes(recipes)
+        space
         puts " "
         puts "These are all the recipes made with #{@ingredient}:"
         puts " "
@@ -63,6 +64,12 @@ class Cli
         @ingredient = gets.strip.downcase
         Api.cook(@ingredient) 
         print_recipes(Recipe.all)
+    end 
+
+    def space
+        puts " "
+        puts "____________________"
+        puts " "
     end 
 
 end 
