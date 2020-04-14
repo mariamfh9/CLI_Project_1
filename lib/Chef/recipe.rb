@@ -1,5 +1,5 @@
 class Recipe
-    attr_accessor :name, :meal_id, :ingredient, :instructions, :ingredients, :portion_size, :measures
+    attr_accessor :name, :meal_id, :ingredient, :instructions, :ingredients, :origin, :measures
     @@all = []
 
     def initialize(name:, meal_id:, ingredient:)

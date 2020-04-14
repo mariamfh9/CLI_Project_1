@@ -42,12 +42,19 @@ class Cli
     end 
 
     def print_recipe(recipe)
+        space
+        puts "#{recipe.name} Recipe"
+        space
+        puts "Origin: #{recipe.origin}"
+        space
+        puts "Ingredients:"
         puts " "
-        puts recipe.name
+        recipe.ingredients.each_with_index do |ingredient, index|
+            puts "#{ingredient}-#{recipe.measures[index]}"
+        end 
         puts " "
-        puts "Now we can start cooking! Here is the recipe:"
+        puts "Now we can start cooking! Here is the recipe: #{recipe.instructions}"
         puts " "
-        puts recipe.instructions
 
     end 
 
