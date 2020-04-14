@@ -2,7 +2,7 @@ class Cli
 
     def run
         puts " "
-        puts "Welcome to your journey to becoming a Chef!".yellow
+        puts "Welcome to your journey to becoming a Chef!".magenta
         puts " "
         prompt_ingredient
         prompt
@@ -34,19 +34,19 @@ class Cli
     def print_recipes(recipes)
         space
         puts " "
-        puts "These are all the recipes made with #{@ingredient}:"
+        puts "These are all the recipes made with #{@ingredient}:".magenta
         puts " "
         recipes.each.with_index(1) do |recipe, index|
-            puts "#{index}. #{recipe.name}"
+            puts "#{index}. #{recipe.name}".green
         end 
         space
     end 
 
     def print_recipe(recipe)
         space
-        puts "#{recipe.name} Recipe"
+        puts "#{recipe.name} Recipe".magenta
         space
-        puts "Origin: #{recipe.origin}".magenta
+        puts "Origin: #{recipe.origin}".cyan
         space
         puts "Ingredients:".magenta
         puts " "
@@ -63,7 +63,7 @@ class Cli
 
     def prompt
         puts " "
-        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or 'exit'.".magenta
+        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or 'exit'.".cyan
         puts " "
     end 
 
