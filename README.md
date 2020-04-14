@@ -49,4 +49,5 @@ $ Ruby bin/recipes
 All pull requests and bug reports are encouraged on Github at https://github.com/mariamfh9/CLI_Project_1. Please adhere to the https://www.contributor-covenant.org/version/1/4/code-of-conduct/ code of conduct. 
 
 ## License
-https://opensource.org/licenses/MIT
+
+ [MIT License](https://opensource.org/licenses/MIT)
