@@ -2,7 +2,7 @@ class Cli
 
     def run
         puts " "
-        puts "Welcome to your journey to becoming a Chef!".magenta
+        puts "Welcome to your journey to becoming a Chef!".magenta.bold
         puts " "
         prompt_ingredient
         prompt
@@ -36,7 +36,7 @@ class Cli
     def print_recipes(recipes)
         space
         puts " "
-        puts "These are all the recipes made with #{@ingredient}:".magenta
+        puts "These are all the recipes made with #{@ingredient}:".magenta.bold
         puts " "
         recipes.each.with_index(1) do |recipe, index|
             puts "#{index}. #{recipe.name}".green
@@ -46,17 +46,16 @@ class Cli
 
     def print_recipe(recipe)
         space
-        puts "#{recipe.name} Recipe".magenta
+        puts "#{recipe.name} Recipe".magenta.bold
         space
-        puts "Origin: #{recipe.origin}".cyan
+        puts "Origin: #{recipe.origin}".cyan.bold
         space
-        puts "Ingredients:".magenta
+        puts "Ingredients:".magenta.bold
         puts " "
         recipe.ingredients.each_with_index do |ingredient, index|
             puts "#{ingredient} #{recipe.measures[index]}".green
         end 
-        puts " "
-        puts "Now we can start cooking! Here is the recipe:".magenta
+        puts "Now we can start cooking! Here is the recipe:".magenta.bold
         puts " "
         puts "#{recipe.instructions}".green
         puts " "
@@ -65,13 +64,13 @@ class Cli
 
     def prompt
         puts " "
-        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or 'exit'.".cyan
+        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or type 'exit'.".cyan.bold
         puts " "
     end 
 
     def prompt_ingredient
         puts " "
-        puts "Enter an ingredient and we'll make a meal out of it!".cyan
+        puts "Enter an ingredient and we'll make a meal out of it!".cyan.bold
         puts " "
         @ingredient = gets.strip.downcase
         Api.cook(@ingredient) if !Ingredient.find_by_ingredient(@ingredient) 
@@ -80,7 +79,7 @@ class Cli
 
     def space
         puts " "
-        puts "____________________".yellow
+        puts "________________________________".yellow.bold
         puts " "
     end 
 
