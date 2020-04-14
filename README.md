@@ -6,7 +6,6 @@ An app where the user can look up recipes and filter the results based off of ce
 
 
 ##Installation Instructions
-Project is on https://github.com/mariamfh9/CLI_Project_1
 
 Install the following gems: 
 
@@ -31,6 +30,8 @@ Type the following to run:
 $ Ruby bin/recipes
 
 ##Contributer's Guide
+
+All pull requests and bug reports are encouraged on Github at https://github.com/mariamfh9/CLI_Project_1. Please adhere to the https://www.contributor-covenant.org/version/1/4/code-of-conduct/ code of conduct. 
 
 ##License
 https://opensource.org/licenses/MIT
