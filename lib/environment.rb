@@ -1,6 +1,7 @@
 require 'pry'
 require 'httparty'
 require 'json'
+require 'colorize'
 
 require_relative './Chef/cli'
 require_relative './Chef/api'
