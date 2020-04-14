@@ -20,14 +20,16 @@ class Cli
                 prompt_ingredient
 
             else 
-                puts "I do not understand - please try again"  
+                puts "I do not understand - please try again".red  
                 puts " "
             end 
             prompt
             input = gets.strip.downcase
         end 
         puts " "
-        puts "See ya later!".blue
+        space
+        puts "See ya later!".green
+        space
         puts " "
     end 
 
@@ -51,12 +53,12 @@ class Cli
         puts "Ingredients:".magenta
         puts " "
         recipe.ingredients.each_with_index do |ingredient, index|
-            puts "#{ingredient}-#{recipe.measures[index]}"
+            puts "#{ingredient} #{recipe.measures[index]}".green
         end 
         puts " "
         puts "Now we can start cooking! Here is the recipe:".magenta
         puts " "
-        puts "#{recipe.instructions}".cyan
+        puts "#{recipe.instructions}".green
         puts " "
 
     end 
