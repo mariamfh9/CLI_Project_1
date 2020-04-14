@@ -2,7 +2,7 @@ class Cli
 
     def run
         puts " "
-        puts "Welcome to your journey to becoming a Chef!"
+        puts "Welcome to your journey to becoming a Chef!".yellow
         puts " "
         prompt_ingredient
         prompt
@@ -27,7 +27,7 @@ class Cli
             input = gets.strip.downcase
         end 
         puts " "
-        puts "See ya later!"
+        puts "See ya later!".blue
         puts " "
     end 
 
@@ -53,20 +53,22 @@ class Cli
             puts "#{ingredient}-#{recipe.measures[index]}"
         end 
         puts " "
-        puts "Now we can start cooking! Here is the recipe: #{recipe.instructions}"
+        puts "Now we can start cooking! Here is the recipe:"
+        puts " "
+        puts "#{recipe.instructions}"
         puts " "
 
     end 
 
     def prompt
         puts " "
-        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or 'exit'."
+        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or 'exit'.".magenta
         puts " "
     end 
 
     def prompt_ingredient
         puts " "
-        puts "Enter an ingredient and we'll make a meal out of it!"
+        puts "Enter an ingredient and we'll make a meal out of it!".cyan
         puts " "
         @ingredient = gets.strip.downcase
         Api.cook(@ingredient) if !Ingredient.find_by_ingredient(@ingredient) 
