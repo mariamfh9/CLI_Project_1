@@ -26,7 +26,9 @@ $ gem install json_pure
 
 ##Usage
 
+Type the following to run: 
 
+$ Ruby bin/recipes
 
 ##Contributer's Guide
 
