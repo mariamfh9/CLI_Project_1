@@ -1,11 +1,13 @@
 class Recipe
-    attr_accessor :name, :meal_id, :ingredient, :instructions
+    attr_accessor :name, :meal_id, :ingredient, :instructions, :ingredients, :portion_size, :measures
     @@all = []
 
-    def initialize(name:, meal_id:, ingredient: )
+    def initialize(name:, meal_id:, ingredient:)
         @name = name 
         @meal_id = meal_id
         @ingredient = ingredient
+        @ingredients = []
+        @measures = []
         @@all << self
     end 
 
