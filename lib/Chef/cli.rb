@@ -10,10 +10,10 @@ class Cli
         while input != 'exit'
             if input == 'list'
                 
-                print_recipes(Recipe.find_by_ingredient(@ingredient))
-            elsif input.to_i > 0 && input.to_i <= Recipe.find_by_ingredient(@ingredient).length
+                print_recipes(Ingredient.find_by_ingredient(@ingredient).recipes)
+            elsif input.to_i > 0 && input.to_i <= Ingredient.find_by_ingredient(@ingredient).recipes.length
                 
-                recipe = Recipe.find_by_ingredient(@ingredient)[input.to_i-1]
+                recipe = Ingredient.find_by_ingredient(@ingredient).recipes[input.to_i-1]
                 Api.get_recipe_details(recipe) if !recipe.instructions
                 print_recipe(recipe) 
             elsif input == "ingredient" 
