@@ -16,6 +16,7 @@ class Ingredient
     def self.find_by_ingredient(ingredient)
         @@all.find {|i| i.name == ingredient}
     end 
+    
 
 
 

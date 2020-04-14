@@ -4,11 +4,7 @@ class Cli
         puts " "
         puts "Welcome to your journey to becoming a Chef!"
         puts " "
-        puts "Enter an ingredient and we'll make a meal out of it!"
-        puts " "
-        @ingredient = gets.strip.downcase
-        Api.cook(@ingredient) 
-        print_recipes(Recipe.all)
+        prompt_ingredient
         prompt
         input = gets.strip.downcase
         while input != 'exit'
@@ -21,7 +17,7 @@ class Cli
                 Api.get_recipe_details(recipe) if !recipe.instructions
                 print_recipe(recipe) 
             elsif input == "ingredient" 
-            
+                prompt_ingredient
 
             else 
                 puts "I do not understand - please try again"  
@@ -56,8 +52,17 @@ class Cli
 
     def prompt
         puts " "
-        puts "Select a number to see the recipe, type 'list' to see the list again, 'ingredient' to select a new ingredient, or 'exit'."
+        puts "Select a 'number' to see the recipe, type 'list' to see the list again, type 'ingredient' to select a new ingredient, or 'exit'."
         puts " "
+    end 
+
+    def prompt_ingredient
+        puts " "
+        puts "Enter an ingredient and we'll make a meal out of it!"
+        puts " "
+        @ingredient = gets.strip.downcase
+        Api.cook(@ingredient) 
+        print_recipes(Recipe.all)
     end 
 
 end 
