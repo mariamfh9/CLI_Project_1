@@ -47,15 +47,15 @@ class Cli
         space
         puts "Origin: #{recipe.origin}"
         space
-        puts "Ingredients:"
+        puts "Ingredients:".magenta
         puts " "
         recipe.ingredients.each_with_index do |ingredient, index|
             puts "#{ingredient}-#{recipe.measures[index]}"
         end 
         puts " "
-        puts "Now we can start cooking! Here is the recipe:"
+        puts "Now we can start cooking! Here is the recipe:".magenta
         puts " "
-        puts "#{recipe.instructions}"
+        puts "#{recipe.instructions}".cyan
         puts " "
 
     end 
