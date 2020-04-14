@@ -9,9 +9,9 @@ An app where the user can look up recipes and filter the results based off of ce
 
 Install the following gems: 
 
-$ gem install pry
+```$ gem install pry
 
-$ gem install httparty
+```$ gem install httparty
 
 $ gem install colorize
 
