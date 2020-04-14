@@ -15,23 +15,18 @@ $ gem install pry
 $ gem install httparty
 
 $ gem install colorize
-
 ```
 
 For JSON, user must be on Ruby 1.9.2. If not, use this command to install: 
 
 ```
-
 $ gem install json
-
 ```
 
 If user does not have a C compiler, use: 
 
 ```
-
 $ gem install json_pure
-
 ```
 
 ### Usage
@@ -39,9 +34,7 @@ $ gem install json_pure
 Type the following to run: 
 
 ```
-
 $ Ruby bin/recipes
-
 ```
 
 ### Contributer's Guide
