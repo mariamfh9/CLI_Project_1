@@ -62,8 +62,8 @@ class Cli
         puts "Enter an ingredient and we'll make a meal out of it!"
         puts " "
         @ingredient = gets.strip.downcase
-        Api.cook(@ingredient) 
-        print_recipes(Recipe.all)
+        Api.cook(@ingredient) if !Ingredient.find_by_ingredient(@ingredient) 
+        print_recipes(Ingredient.find_by_ingredient(@ingredient).recipes)
     end 
 
     def space

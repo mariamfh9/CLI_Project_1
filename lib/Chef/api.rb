@@ -9,7 +9,6 @@ class Api
            new_recipe = Recipe.new(name: d["strMeal"], meal_id: d["idMeal"], ingredient: ingredient)
            new_ingredient.recipes << new_recipe #relationship between ingredient and recipe
         end 
-        binding.pry
     end 
 
     def self.get_recipe_details(recipe)
