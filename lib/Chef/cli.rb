@@ -20,7 +20,7 @@ class Cli
                 prompt_ingredient
 
             else 
-                puts "I do not understand - please try again".red  
+                puts "I do not understand - please try again".red
                 puts " "
             end 
             prompt
