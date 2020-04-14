@@ -39,13 +39,14 @@ class Cli
         recipes.each.with_index(1) do |recipe, index|
             puts "#{index}. #{recipe.name}"
         end 
+        space
     end 
 
     def print_recipe(recipe)
         space
         puts "#{recipe.name} Recipe"
         space
-        puts "Origin: #{recipe.origin}"
+        puts "Origin: #{recipe.origin}".magenta
         space
         puts "Ingredients:".magenta
         puts " "
@@ -77,7 +78,7 @@ class Cli
 
     def space
         puts " "
-        puts "____________________"
+        puts "____________________".yellow
         puts " "
     end 
 
