@@ -34,7 +34,7 @@ $ gem install json_pure
 Type the following to run: 
 
 ```
-$ Ruby bin/recipes
+$ ruby bin/recipes
 ```
 
 ### Contributer's Guide
