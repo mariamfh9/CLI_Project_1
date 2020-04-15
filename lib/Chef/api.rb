@@ -5,11 +5,17 @@ class Api
         response = Net::HTTP.get(URI(url))  
         recipes = JSON.parse(response)["meals"]
         new_ingredient = Ingredient.new(ingredient) 
-        recipes.each do |d|
-           new_recipe = Recipe.new(name: d["strMeal"], meal_id: d["idMeal"], ingredient: ingredient)
-           new_ingredient.recipes << new_recipe 
-           
+
+        if recipes.length > 0 
+            recipes.each do |d|
+                new_recipe = Recipe.new(name: d["strMeal"], meal_id: d["idMeal"], ingredient: ingredient)
+                new_ingredient.recipes << new_recipe 
+            end 
+     
+        else 
+            new_ingredient.recipes = []
         end 
+
     end 
 
     def self.get_recipe_details(recipe)

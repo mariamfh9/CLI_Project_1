@@ -18,7 +18,10 @@ class Cli
                 print_recipe(recipe) 
             elsif input == "ingredient" 
                 prompt_ingredient
-
+            elsif 
+                !Ingredient.all.include? @ingredient 
+                puts "This ingredient does not exist. Please enter another ingredient."
+                prompt_ingredient
             else 
                 puts "I do not understand - please try again".red
                 puts " "
