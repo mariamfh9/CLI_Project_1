@@ -17,10 +17,6 @@ class Cli
                 print_recipe(recipe) 
             elsif input == "ingredient" 
                 prompt_ingredient
-            elsif 
-                !Ingredient.all.include? @ingredient 
-                puts "This ingredient does not exist. Please enter another ingredient.".red
-                prompt_ingredient
             else 
                 puts "I do not understand - please try again".red
                 puts " "
@@ -30,7 +26,7 @@ class Cli
         end 
         puts " "
         space
-        puts "See ya later!".green
+        puts "See ya later!".green.bold
         space
         puts " "
     end 
@@ -57,10 +53,12 @@ class Cli
         recipe.ingredients.each_with_index do |ingredient, index|
             puts "#{ingredient} #{recipe.measures[index]}".green
         end 
+        space
+        puts " "
         puts "Now we can start cooking! Here is the recipe:".magenta.bold
         puts " "
         puts "#{recipe.instructions}".green
-        puts " "
+        space
 
     end 
 
@@ -80,7 +78,9 @@ class Cli
        
             print_recipes(Ingredient.find_by_ingredient(@ingredient).recipes)
         else 
-            puts "There are no meals."
+            puts " "
+            puts "This ingredient does not exist. Please enter another ingredient.".red.bold
+            prompt_ingredient
 
         end 
 
