@@ -51,7 +51,7 @@ class Cli
         puts "Ingredients:".magenta.bold
         puts " "
         recipe.ingredients.each_with_index do |ingredient, index|
-            puts "#{ingredient} #{recipe.measures[index]}".green
+            puts "#{ingredient}- ".blue + " #{recipe.measures[index]}".green
         end 
         space
         puts " "
