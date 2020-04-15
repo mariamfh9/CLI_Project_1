@@ -12,7 +12,6 @@ class Cli
                 
                 print_recipes(Ingredient.find_by_ingredient(@ingredient).recipes)
             elsif input.to_i > 0 && input.to_i <= Ingredient.find_by_ingredient(@ingredient).recipes.length
-                
                 recipe = Ingredient.find_by_ingredient(@ingredient).recipes[input.to_i-1]
                 Api.get_recipe_details(recipe) if !recipe.instructions
                 print_recipe(recipe) 
@@ -20,7 +19,7 @@ class Cli
                 prompt_ingredient
             elsif 
                 !Ingredient.all.include? @ingredient 
-                puts "This ingredient does not exist. Please enter another ingredient."
+                puts "This ingredient does not exist. Please enter another ingredient.".red
                 prompt_ingredient
             else 
                 puts "I do not understand - please try again".red

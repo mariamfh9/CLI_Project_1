@@ -6,15 +6,15 @@ class Api
         recipes = JSON.parse(response)["meals"]
         new_ingredient = Ingredient.new(ingredient) 
 
-        if recipes.length > 0 
+        #if recipes.length > 0 
             recipes.each do |d|
                 new_recipe = Recipe.new(name: d["strMeal"], meal_id: d["idMeal"], ingredient: ingredient)
                 new_ingredient.recipes << new_recipe 
             end 
      
-        else 
-            new_ingredient.recipes = []
-        end 
+       # else 
+            #new_ingredient.recipes = []
+        #end 
 
     end 
 
