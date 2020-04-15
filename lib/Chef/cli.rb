@@ -76,7 +76,16 @@ class Cli
         puts " "
         @ingredient = gets.strip.downcase
         Api.cook(@ingredient) if !Ingredient.find_by_ingredient(@ingredient) 
-        print_recipes(Ingredient.find_by_ingredient(@ingredient).recipes)
+        if  Ingredient.find_by_ingredient(@ingredient)
+       
+            print_recipes(Ingredient.find_by_ingredient(@ingredient).recipes)
+        else 
+            puts "There are no meals."
+
+        end 
+
+       
+          
     end 
 
     def space
